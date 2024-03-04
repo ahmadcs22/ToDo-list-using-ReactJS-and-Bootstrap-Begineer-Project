@@ -1,2 +1,2 @@
 # todo-list
-learning react js
+making a todo app using react js
