@@ -3,6 +3,7 @@ import React from 'react'
 export const Todoitems = ({todo,onDelete}) => {
   let todoStyle={
     width :"20%",
+    backgroundColor:"rgb(192 226 229)"
    
   }
   let imgStyle={
@@ -16,12 +17,12 @@ export const Todoitems = ({todo,onDelete}) => {
     //   <button className="btn btn-danger btn-sm" onClick={()=>{onDelete(todo)}}>Delete</button>
     // </div>
     <>
-    <div class="card" style={todoStyle}>
-  <img src="https://source.unsplash.com/1200x1200/?task,box" className="card-img" style={imgStyle} alt="..."/>
+    <div className="card" style={todoStyle}>
+  <img src="https://source.unsplash.com/1200x1200/?task,box" className="card-img" style={imgStyle} alt='https://source.unsplash.com/1200x1200/?colors,box'/>
 
-  <div class="card-body">
-    <h5 class="card-title">{todo.title}</h5>
-    <p class="card-text">{todo.desc}</p>
+  <div className="card-body">
+    <h5 className="card-title">{todo.title}</h5>
+    <p className="card-text">{todo.desc}</p>
     <button className="btn btn-danger btn-sm" onClick={()=>{onDelete(todo)}}>Delete</button>
   </div>
 </div>
