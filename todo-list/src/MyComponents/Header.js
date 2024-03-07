@@ -23,7 +23,7 @@ export const Header = (props) => {
             {props.searchBar === true ? <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
-            </form> : ""}
+            </form> : "Enter Parameter as true "}
           </div>
         </div>
       </nav>
@@ -33,7 +33,7 @@ export const Header = (props) => {
 
 Header.propTypes = {
   title: PropTypes.string,
-  searchBar: PropTypes.bool.isRequired
+  searchBar: PropTypes.bool
 }
 Header.defaultProps={
   title: "Kindly Pass Title",
