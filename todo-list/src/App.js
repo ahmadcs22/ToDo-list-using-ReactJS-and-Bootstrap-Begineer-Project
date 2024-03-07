@@ -1,41 +1,67 @@
-
 import './App.css';
+import { About } from './MyComponents/About';
+import { Addtodo } from './MyComponents/Addtodo';
 import { Footer } from './MyComponents/Footer';
 import { Header } from './MyComponents/Header';
 import { Todos } from './MyComponents/Todos';
 import React, { useState } from 'react';
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 function App() {
-  const onDelete = (todo) => {
-    console.log("i am on delete",todo)
-    setTodos(todos.filter((e) => {
-      return e !== todo
-    }));
-  }
   const [todos, setTodos] = useState([
-    {
-      sno: 1,
-      title: "Goto market",
-      desc: "You need to got market"
-    },
-    {
-      sno: 2,
-      title: "Goto uni",
-      desc: "You need to got uni"
-    },
-    {
-      sno: 3,
-      title: "Goto Flat",
-      desc: "You need to got Flat"
-    },
-  ])
+
+  ]);
+
+  const onDelete = (todo) => {
+    console.log("i am on delete", todo);
+    setTodos(todos.filter((e) => e.sno !== todo.sno));
+  }
+
+  const addtodo = (title, desc) => {
+    let sno = todos.length + 1;
+    const myTodo = {
+      sno: sno,
+      title: title,
+      desc: desc,
+    }
+    setTodos([...todos, myTodo]);
+  }
+
   return (
     <>
-      <Header title={"Todo-App"} searchBar={false} />
-      <Todos todos={todos} onDelete={onDelete} />
-      <Footer />
+       <Router>
+      <>
+        <Header title={"Todo-App"} searchBar={false} />
+       
+
+        <Routes>
+          <Route exact path="/" Component={()=>{
+            return (
+              <>
+               <Addtodo addtodo={addtodo} />
+            <Todos todos={todos} onDelete={onDelete} /></>
+            )
+          }}>
+          </Route>
+          <Route exact path="/about" Component={()=>{
+            return (
+              <>
+               <About />
+
+              </>
+            )
+          }}>
+          </Route>
+        </Routes>
+        <Footer />
+      </>
+    </Router>
 
     </>
   );
 }
+
 export default App;
