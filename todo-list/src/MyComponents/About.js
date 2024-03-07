@@ -8,7 +8,7 @@ export const About = () => {
   return (
     <>
     <div className="container text-center my-5"><h1>About Todo List App</h1></div>
-    <div class="container " style={myyStyle}>
+    <div className="container " style={myyStyle}>
     <ul>
       <li><b><p>This Todo List App is created by Ahmad Siraj, a computer science student, as a project.</p></b></li>
     <li><b><p>It allows you to manage your tasks efficiently by adding, deleting.</p></b></li>
