@@ -1,2 +1,2 @@
 # todo-list
-making a todo app using react js
+ToDo App using react basics and bootstrap
